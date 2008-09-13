@@ -1,0 +1,7 @@
+content	cowproof	content/
+overlay chrome://messenger/content/messengercompose/messengercompose.xul	chrome://cowproof/content/overlay.xul
+
+locale	cowproof	ja-JP	locale/ja-JP/
+
+skin	cowproof	classic/1.0	skin/
+style	chrome://global/content/customizeToolbar.xul	chrome://cowproof/skin/overlay.css

@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://cowproof/skin/overlay.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://cowproof/locale/overlay.dtd">
+<overlay id="cowproof-overlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script src="overlay.js"/>
+
+  <menupopup id="taskPopup">
+    <menuseparator />
+    <menuitem id="cowproof-menuitem" label="&cowproof;" type="checkbox" accesskey="c"
+              oncommand="Cowproof.togglePanel()"/>
+  </menupopup>
+
+  <vbox id="appcontent">
+    <splitter id="cowproof-content-splitter" collapsed="true"/>
+    <vbox id="cowproof-content-box" collapsed="true" persist="height">
+      <toolbox id="cowproof-toolbox">
+	<toolbar id="cowproof-toolbar">
+	  <toolbarbutton id="cowproof-do-proofread-button" label="&cowproof.doProofread;" oncommand="Cowproof.doProofread()" />
+	  <toolbarspacer flex="1"/>
+	  <toolbarbutton id="cowproof-about-button" label="&cowproof.about;" oncommand="Cowproof.showAbout()" />
+	</toolbar>
+      </toolbox>
+      <hbox flex="1">
+	<tree id="cowproof-result-tree" seltype="single" flex="1" >
+	  <treecols>
+	    <treecol id="cowproof-rt-start-pos" label="開始位置" flex="1"/>
+	    <treecol id="cowproof-rt-end-pos" label="終了位置" flex="1"/>
+	    <treecol id="cowproof-rt-surface" label="修正前" flex="4"/>	    
+	    <treecol id="cowproof-rt-shiteki-word" label="候補" flex="4"/>	    
+	    <treecol id="cowproof-rt-shiteki-info" label="詳細" flex="8"/>	    
+	  </treecols>
+	  <treechildren/>
+	</tree>
+      </hbox>
+    </vbox>
+  </vbox>
+</overlay>
